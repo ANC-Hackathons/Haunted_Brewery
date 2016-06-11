@@ -4,40 +4,40 @@ angular.module('myApp.players', [])
 
 .service('playersService', [ '$http', function($http) {
   var players = [];
-  var charClasses = [];
-  var selectedCharClasses = [];
+  var roles = [];
+  var selectedRoles = [];
   var currentPlayerIndex = 0;
 
-  var charClassesLoadedPromise = $http({
+  var rolesLoadedPromise = $http({
     method: 'GET',
-    url: '/classes'
+    url: '/roles'
   }).then(function successCallback(response) {
-    charClasses = response.data;
+    roles = response.data;
   }, function errorCallback(response) {
-    console.log("Something went wrong fetching classes from server");
+    console.log("Something went wrong fetching roles from server");
   });
 
   return {
     getPlayers: function() { return players },
 
-    addPlayer: function(name, charClass, health, bac) {
+    addPlayer: function(name, role, health, bac) {
       players.push({
         name: name,
-        charClass: charClass,
+        role: role,
         health: health || 3,
         bac: bac || 0.05
       });
     },
 
-    getCharClasses: function() { return charClasses },
+    getRoles: function() { return roles },
 
-    getSelectedCharClasses: function() { return selectedCharClasses },
+    getSelectedRoles: function() { return selectedRoles },
 
-    selectCharClass: function(charClass) {
-      selectedCharClasses.push(parseInt(charClass));
+    selectRole: function(role) {
+      selectedRoles.push(parseInt(role));
     },
 
-    getCharClassesLoadedPromise: function() { return charClassesLoadedPromise },
+    getRolesLoadedPromise: function() { return rolesLoadedPromise },
 
     getCurrentPlayerIndex: function() { return currentPlayerIndex },
 

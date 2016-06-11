@@ -13,7 +13,7 @@ angular.module('myApp.setupParty', ['ngRoute'])
 
   $scope.players = playersService.getPlayers();
 
-  $scope.selectedClasses = [];
+  $scope.selectedRoles = [];
 
   $scope.addPlayer = function() {
     $location.path('/addPlayer');

@@ -13,17 +13,17 @@
     <div class="row">
       <div class="small-12 text-center columns">
       <ul style="display: inline; list-style-type: none; float: left;">
-        <li ng-repeat="charClass in charClasses" class="tile">
-          <label for="class_{{charClass.id}}">
+        <li ng-repeat="role in roles" class="tile">
+          <label for="role_{{role.id}}">
             <input type="radio"
-                   id="{{charClass.id}}"
-                   value="{{charClass.id}}"
-                   name="player.class"
-                   title="{{charClass.name}}"
-                   ng-disabled="isAlreadySelected(charClass.id)"
-                   ng-model="player.charClass"
+                   id="{{role.id}}"
+                   value="{{role.id}}"
+                   name="player.role"
+                   title="{{role.name}}"
+                   ng-disabled="isAlreadySelected(role.id)"
+                   ng-model="player.role"
             >
-            {{charClass.name}}
+            {{role.name}}
           </label>
         </li>
       </ul>
