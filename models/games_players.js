@@ -16,11 +16,11 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.INTEGER,
 			allowNull: false
 		},
-		class: {
+		role: {
 			type: DataTypes.INTEGER,
 			allowNull: true,
 			references: {
-				model: 'classes',
+				model: 'roles',
 				key: 'id'
 			}
 		},

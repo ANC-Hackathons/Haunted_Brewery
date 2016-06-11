@@ -1,13 +1,13 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('classes_difficulties', {
-		class: {
+	return sequelize.define('roles_difficulties', {
+		role: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 			primaryKey: true,
 			references: {
-				model: 'classes',
+				model: 'roles',
 				key: 'id'
 			}
 		},
@@ -28,6 +28,6 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'classes_difficulties'
+		tableName: 'roles_difficulties'
 	});
 };
