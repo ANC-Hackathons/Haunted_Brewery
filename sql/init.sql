@@ -379,24 +379,24 @@ INSERT INTO bosses ( name, series ) VALUES ( 'Samael', series_demons ) RETURNING
 INSERT INTO bosses ( name, series ) VALUES ( 'The Beast', series_demons ) RETURNING id INTO boss_beast;
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_hog, 'Pigs Might Fly', '.2% chance to do 6 damage to character with most health' );
+VALUES ( boss_hog, 'Pigs Might Fly', 'has a .2% chance to do 8 damage to character with highest health' );
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_hog, 'Swine Flew', 'all characters’ BAC increased by 2' );
-
-
-INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_reverend, 'Holy Roller', '2 damage to all characters' );
-
-INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_reverend, 'Penitence', 'character takes damage equal to ⅓ of current BAC' );
+VALUES ( boss_hog, 'Swine Flew', 'increases all characters’ BAC by 2' );
 
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_salvation, 'Ascension', 'all characters’ health reduced by 3' );
+VALUES ( boss_reverend, 'Holy Roller', 'deals 2 damage to all characters' );
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_salvation, 'Righteous Fury', 'strikes individual for heavy damage' );
+VALUES ( boss_reverend, 'Penitence', 'strikes one character for one third of their BAC' );
+
+
+INSERT INTO bosses_abilities ( boss, name, ability )
+VALUES ( boss_salvation, 'Ascension', 'reduces all characters’ health by 3' );
+
+INSERT INTO bosses_abilities ( boss, name, ability )
+VALUES ( boss_salvation, 'Righteous Fury', 'strikes individual for 4 damage' );
 
 INSERT INTO bosses_abilities ( boss, name, ability )
 VALUES ( boss_salvation, 'Water to Wine', 'causes one character’s health to be reduced to their BAC, but their BAC to be reduced by half.' );
@@ -404,42 +404,42 @@ VALUES ( boss_salvation, 'Water to Wine', 'causes one character’s health to be
 
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_maha, 'Ayurveda', 'heals self for 2' );
+VALUES ( boss_maha, 'Ayurveda', 'heals Maharaja for 2' );
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_maha, 'Karma', 'strikes character for 1 + (damage of character’s most recent attack)' );
-
-
-
-INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_kaiser, 'Reich & Roll', '2 damage to all' );
-
-INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_kaiser, 'Blitz', 'Increase one character’s BAC by 2' );
+VALUES ( boss_maha, 'Karma', 'strikes one character for one half of their BAC)' );
 
 
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_czar, 'Filicide', 'Czar sacrifices 2 health to do 7 damage to one character' );
+VALUES ( boss_kaiser, 'Reich & Roll', 'deals 2 damage to all characters' );
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_czar, 'Bloody Sunday', '3 damage to all characters' );
-
-
-
-INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_meph, 'Dark Bargain', 'loses 1 of own health to increase one character’s BAC by 2' );
-
-INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_meph, 'The Price is Right', 'reduce a character’s BAC by 1, but deal 3 damage' );
+VALUES ( boss_kaiser, 'Blitz', 'increases one character’s BAC by 2' );
 
 
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_samael, 'Reign of Fire', '4 damage to all characters whose BAC is below 5' );
+VALUES ( boss_czar, 'Filicide', 'sacrifices 2 of Czar’s health to deal 7 damage to one character' );
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_samael, 'Mortality', '2 damage and raise BAC of a character by 2' );
+VALUES ( boss_czar, 'Bloody Sunday', 'deals 3 damage to all characters' );
+
+
+
+INSERT INTO bosses_abilities ( boss, name, ability )
+VALUES ( boss_meph, 'Dark Bargain', 'sacrifices 1 of Mephistopheles’ health to increase one character’s BAC by 3' );
+
+INSERT INTO bosses_abilities ( boss, name, ability )
+VALUES ( boss_meph, 'The Price is Right', 'reduces one character’s BAC by 1, but deals 3 damage' );
+
+
+
+INSERT INTO bosses_abilities ( boss, name, ability )
+VALUES ( boss_samael, 'Reign of Fire', 'deals 4 damage to all characters whose BAC is below 5' );
+
+INSERT INTO bosses_abilities ( boss, name, ability )
+VALUES ( boss_samael, 'Mortality', 'deals 2 damage and raises BAC of a character by 2' );
 
 
 
@@ -447,12 +447,12 @@ INSERT INTO bosses_abilities ( boss, name, ability )
 VALUES ( boss_beast, 'The Number', 'deals 6 damage to all' );
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_beast, 'Gluttony', '3 damage to all characters with BAC above 5' );
+VALUES ( boss_beast, 'Gluttony', 'deals 3 damage to all characters with BAC above 5' );
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_beast, 'Wrath', '3 damage to one character' );
+VALUES ( boss_beast, 'Wrath', 'deals 3 damage to one character' );
 
 INSERT INTO bosses_abilities ( boss, name, ability )
-VALUES ( boss_beast, 'Greed', 'Steals 2 of one character’s health' );
+VALUES ( boss_beast, 'Greed', 'steals 2 of one character’s health' );
 
 END $$;
