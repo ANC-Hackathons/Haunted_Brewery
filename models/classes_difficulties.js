@@ -1,13 +1,8 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('tiles_encounters', {
-		tile: {
-			type: DataTypes.INTEGER,
-			allowNull: false,
-			primaryKey: true
-		},
-		encounter: {
+	return sequelize.define('classes_difficulties', {
+		class: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 			primaryKey: true
@@ -17,12 +12,15 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false,
 			primaryKey: true
 		},
-		probability: {
+		base_hp: {
 			type: DataTypes.INTEGER,
-			allowNull: false,
-			defaultValue: '10'
+			allowNull: false
+		},
+		base_bac: {
+			type: DataTypes.INTEGER,
+			allowNull: false
 		}
 	}, {
-		tableName: 'tiles_encounters'
+		tableName: 'classes_difficulties'
 	});
 };
