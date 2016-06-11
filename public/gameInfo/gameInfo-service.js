@@ -6,12 +6,19 @@ angular.module('myApp.gameInfo', [])
 
   var difficulty = null;
   var currentBoss = null;
+  var fightingBoss = false;
 
   return {
 
     getDifficulty: function() {return difficulty},
 
-    getCurrentBoss: function() {return currentBoss}
+    getCurrentBoss: function() {return currentBoss},
+
+    isBossFight: function() {return fightingBoss},
+
+    startBossFight: function() {fightingBoss = true},
+
+    endBossFight: function() {fightingBoss = false}
 
   }
 

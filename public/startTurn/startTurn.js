@@ -9,12 +9,18 @@ angular.module('myApp.startTurn', ['ngRoute'])
   });
 }])
 
-.controller('startTurnCtrl', ['$scope', '$location', 'playersService', function($scope, $location, playersService) {
+.controller('startTurnCtrl', ['$scope', '$location', 'playersService', 'gameInfoService', function($scope, $location, playersService, gameInfoService) {
+
+  var isBossFight = gameInfoService.isBossFight();
 
   $scope.currentPlayer = playersService.getCurrentPlayer();
 
   $scope.startTurn = function() {
-    $location.path('/selectRoom');
+    if (isBossFight) {
+      $location.path('/bossFightPlayerTurn');
+    } else {
+      $location.path('/selectRoom');
+    };
   }
 
 }]);

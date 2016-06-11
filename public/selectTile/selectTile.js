@@ -13,6 +13,8 @@ angular.module('myApp.selectTile', ['ngRoute'])
 
   var roomId = $routeParams.roomId
 
+  $scope.modalShown = false;
+
   $http({
     method: 'GET',
     url: '/tiles',
@@ -26,7 +28,11 @@ angular.module('myApp.selectTile', ['ngRoute'])
 
   $scope.selectTile = function(roomId) {
     console.log(roomId);
+    $scope.modalShown = !$scope.modalShown;
+  }
 
+  $scope.closeModal = function() {
+    $scope.modalShown = false;
   }
 
 }]);

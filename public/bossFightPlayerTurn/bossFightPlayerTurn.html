@@ -1,0 +1,25 @@
+<!-- BOSS ARTWORK -->
+
+BOSS HEALTH: {{currentBoss.abvRemaining}}
+
+<button np-click="characterInfo()">Character</button>
+
+<button np-click="inventory()">Inventory</button>
+
+<button np-click="ability()">Ability</button>
+
+<modal-dialog show='characterShown' width='340px' height='340px'>
+  <p>Modal Content Goes here<p>
+  <button ng-click="closeModal()">Continue</button>
+</modal-dialog>
+
+
+<modal-dialog show='inventoryShown' width='340px' height='340px'>
+  <p>Modal Content Goes here<p>
+  <button ng-click="closeModal()">Continue</button>
+</modal-dialog>
+
+<modal-dialog show='abilityShown' width='340px' height='340px'>
+  <p>Modal Content Goes here<p>
+  <button ng-click="closeModal()">Continue</button>
+</modal-dialog>
