@@ -9,12 +9,23 @@ angular.module('myApp.setupParty', ['ngRoute'])
   });
 }])
 
-.controller('SetupPartyCtrl', ['$scope', function($scope) {
+.controller('SetupPartyCtrl', ['$scope', '$http', function($scope, $http) {
   $scope.players = [
     new Player()
   ];
 
+  $scope.classes = [];
   $scope.selectedClasses = [];
+
+  $http({
+    method: 'GET',
+    url: '/classes'
+  }).then(function successCallback(response) {
+    console.log(response.data.classes);
+    $scope.classes = response.data.classes;
+  }, function errorCallback(response) {
+    console.log("Something went wrong fetching classes from server");
+  });
 
   $scope.valueSelected = function() {
     $scope.selectedClasses = [];

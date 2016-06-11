@@ -5,8 +5,7 @@
   <label for="playerClass">Class:</label><br>
   <select name="playerClass" ng-model="player.class" ng-change="valueSelected()">
     <option value="">---Please select---</option> <!-- not selected / blank option -->
-    <option value="option-1" ng-disabled="isAlreadySelected('option-1')">Option 1</option>
-    <option value="option-2" ng-disabled="isAlreadySelected('option-2')">Option 2</option>
+<option ng-repeat="class in classes" value="{{class}}" ng-disabled="isAlreadySelected(class)">{{class}}</option>
   </select><br>
 
   <button name="removePlayer" ng-click="removePlayer($index)">Remove</button>

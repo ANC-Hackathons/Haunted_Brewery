@@ -29,6 +29,12 @@ app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 
+app.get('/classes', function(request, response) {
+  response.send({
+    classes: ['Brewmaster', 'Cellarmaster', 'Bartender', 'Chemist', 'Keg Whisperer', 'Forklift Pilot']
+  })
+})
+
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
