@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.setupParty',
   'myApp.startTurn',
+  'myApp.selectRoom',
   'myApp.addPlayer',
   'myApp.players',
   'myApp.playerInfo',

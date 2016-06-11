@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.startTurn', ['ngRoute'])
+angular.module('myApp.selectRoom', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/startTurn', {
-    templateUrl: 'startTurn/startTurn.html',
-    controller: 'startTurnCtrl'
+  $routeProvider.when('/selectRoom', {
+    templateUrl: 'selectRoom/selectRoom.html',
+    controller: 'selectRoomCtrl'
   });
 }])
 
-.controller('startTurnCtrl', ['$scope', '$location', 'playersService', function($scope, $location, playersService) {
+.controller('selectRoomCtrl', ['$scope', '$location', 'playersService', function($scope, $location, playersService) {
 
   $scope.players = playersService.getPlayers();
   $scope.currentPlayer = $scope.players[playersService.getCurrentPlayerIndex()];
@@ -17,7 +17,7 @@ angular.module('myApp.startTurn', ['ngRoute'])
   console.log($scope.players);
   console.log($scope.currentPlayer);
 
-  $scope.startTurn = function() {
+  $scope.selectRoom = function() {
     //TODO:  add proper route
     //$location.path('/addPlayer');
   }
