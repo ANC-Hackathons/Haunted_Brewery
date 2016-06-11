@@ -9,11 +9,41 @@ angular.module('myApp.selectDifficulty', ['ngRoute'])
   });
 }])
 
-.controller('selectDifficultyCtrl', ['$scope', '$location', '$http', function($scope, $location, $http) {
+.controller('selectDifficultyCtrl', ['$scope', '$location', '$http', 'gameInfoService', function($scope, $location, $http, gameInfoService) {
 
   $scope.selectDifficulty = function(difficultyId) {
     console.log(difficultyId);
-    $location.path('/roundStart');
+    if (difficultyId == 1) {
+      $http({
+        method: 'GET',
+        url: 'easy'
+      }).then(function(response) {
+        console.log(response);
+        gameInfoService.setBosses(response.data);
+        $location.path('/roundStart');
+      });
+    }
+
+    if (difficultyId == 2) {
+      $http({
+        method: 'GET',
+        url: 'medium'
+      }).then(function(response) {
+        gameInfoService.setBosses(response.data);
+        $location.path('/roundStart');
+      });
+    }
+
+    if (difficultyId == 3) {
+      $http({
+        method: 'GET',
+        url: 'hard'
+      }).then(function(response) {
+        gameInfoService.setBosses(response.data);
+        $location.path('/roundStart');
+      });
+    }
+
   }
 
 }]);

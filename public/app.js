@@ -5,14 +5,20 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.setupParty',
   'myApp.startTurn',
+  'myApp.startBossTurn',
+  'myApp.bossFightPlayerTurn',
   'myApp.selectRoom',
   'myApp.selectDifficulty',
+  'myApp.startBossFight',
   'myApp.roundStart',
   'myApp.gameInfo',
   'myApp.selectTile',
   'myApp.addPlayer',
   'myApp.players',
   'myApp.playerInfo',
+  'myApp.modal',
+  'myApp.gameWon',
+  'myApp.gameLost',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

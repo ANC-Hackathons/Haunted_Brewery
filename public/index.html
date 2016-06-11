@@ -46,6 +46,49 @@
     background-color: crimson !important;
   }
 
+  .ng-modal-overlay {
+    /* A dark translucent div that covers the whole screen */
+    position:absolute;
+    z-index:9999;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:#000000;
+    opacity: 0.8;
+  }
+  .ng-modal-dialog {
+    /* A centered div above the overlay with a box shadow. */
+    z-index:10000;
+    position: absolute;
+    width: 50%; /* Default */
+
+    /* Center the dialog */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+
+    background-color: #fff;
+    box-shadow: 4px 4px 80px #000;
+  }
+  .ng-modal-dialog-content {
+    padding:10px;
+    text-align: left;
+  }
+  .ng-modal-close {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 120%;
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'arial', 'sans-serif';
+  }
+
   </style>
 </head>
 <body>
@@ -54,11 +97,16 @@
     <div class="inline-list button-group">
       <a class="button" href="#!/setupParty">setupParty</a>
       <a class="button" href="#!/addPlayer">addPlayer</a>
-      <a class="button" href="#!/startTurn">startTurn</a>
-      <a class="button" href="#!/selectRoom">selectRoom</a>
       <a class="button" href="#!/selectDifficulty">selectDifficulty</a>
       <a class="button" href="#!/roundStart">roundStart</a>
+      <a class="button" href="#!/startTurn">startTurn</a>
+      <a class="button" href="#!/selectRoom">selectRoom</a>
       <a class="button" href="#!/selectTile/1">selectTile</a>
+      <a class="button" href="#!/startBossFight">startBossFight</a>
+      <a class="button" href="#!/bossFightPlayerTurn">bossFightPlayerTurn</a>
+      <a class="button" href="#!/startBossTurn">startBossTurn</a>
+      <a class="button" href="#!/gameWon">gameWon</a>
+      <a class="button" href="#!/gameLost">gameLost</a>
     </div>
   </div>
 </div>
@@ -82,17 +130,24 @@
   <script src="app.js"></script>
   <script src="setupParty/setupParty.js"></script>
   <script src="startTurn/startTurn.js"></script>
+  <script src="startBossTurn/startBossTurn.js"></script>
+  <script src="bossFightPlayerTurn/bossFightPlayerTurn.js"></script>
   <script src="selectRoom/selectRoom.js"></script>
   <script src="selectDifficulty/selectDifficulty.js"></script>
+  <script src="startBossFight/startBossFight.js"></script>
   <script src="roundStart/roundStart.js"></script>
   <script src="selectTile/selectTile.js"></script>
   <script src="addPlayer/addPlayer.js"></script>
   <script src="players/players-service.js"></script>
+  <script src="gameWon/gameWon.js"></script>
+  <script src="gameLost/gameLost.js"></script>
   <script src="gameInfo/gameInfo-service.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
   <script src="components/playerInfo/playerInfo.js"></script>
   <script src="components/playerInfo/playerInfo-directive.js"></script>
+  <script src="components/modal/modal.js"></script>
+  <script src="components/modal/modal-directive.js"></script>
 </body>
 </html>

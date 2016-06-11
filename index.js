@@ -124,7 +124,7 @@ request
   .get('/beers/hog-heaven')
   .use(prefix)
   .end(function(err, response) {
-    hog_heaven = response;
+    hog_heaven = response.body.beer;
   });
 
 app.get('/hog-heaven', function(request, response) {
@@ -138,7 +138,7 @@ request
   .get('/beers/the-reverend')
   .use(prefix)
   .end(function(err, response) {
-    the_reverend = response;
+    the_reverend = response.body.beer;
   });
 
 app.get('/the-reverend', function(request, response) {
@@ -152,7 +152,7 @@ request
   .get('/beers/salvation')
   .use(prefix)
   .end(function(err, response) {
-    salvation = response;
+    salvation = response.body.beer;
   });
 
 app.get('/salvation', function(request, response) {
@@ -161,12 +161,18 @@ app.get('/salvation', function(request, response) {
       );
 });
 
+app.get('/easy', function(request, response) {
+      response.send(
+        [hog_heaven, the_reverend, salvation]
+      );
+});
+
 var the_maharaja = {};
 request
   .get('/beers/the-maharaja')
   .use(prefix)
   .end(function(err, response) {
-    the_maharaja = response;
+    the_maharaja = response.body.beer;
   });
 
 app.get('/the-maharaja', function(request, response) {
@@ -180,7 +186,7 @@ request
   .get('/beers/the-kaiser')
   .use(prefix)
   .end(function(err, response) {
-    the_kaiser = response;
+    the_kaiser = response.body.beer;
   });
 
 app.get('/the-kaiser', function(request, response) {
@@ -194,7 +200,7 @@ request
   .get('/beers/the-czar')
   .use(prefix)
   .end(function(err, response) {
-    the_czar = response;
+    the_czar = response.body.beer;
   });
 
 app.get('/the-czar', function(request, response) {
@@ -203,12 +209,18 @@ app.get('/the-czar', function(request, response) {
       );
 });
 
+app.get('/medium', function(request, response) {
+      response.send(
+        [the_maharaja, the_kaiser, the_czar]
+      );
+});
+
 var mephistopheles = {};
 request
   .get('/beers/mephistopheles')
   .use(prefix)
   .end(function(err, response) {
-    mephistopheles = response;
+    mephistopheles = response.body.beer;
   });
 
 app.get('/mephistopheles', function(request, response) {
@@ -222,7 +234,7 @@ request
   .get('/beers/samael-s')
   .use(prefix)
   .end(function(err, response) {
-    samael = response;
+    samael = response.body.beer;
   });
 
 app.get('/samael', function(request, response) {
@@ -236,7 +248,7 @@ request
   .get('/beers/the-beast')
   .use(prefix)
   .end(function(err, response) {
-    the_beast = response;
+    the_beast = response.body.beer;
   });
 
 app.get('/the-beast', function(request, response) {
@@ -244,3 +256,10 @@ app.get('/the-beast', function(request, response) {
         the_beast
       );
 });
+
+app.get('/hard', function(request, response) {
+      response.send(
+        [mephistopheles, samael, the_beast]
+      );
+});
+

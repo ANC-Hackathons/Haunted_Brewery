@@ -69,9 +69,9 @@ angular.module('myApp.players', [])
     getCurrentPlayer: function() { return players[currentPlayerIndex] },
 
     nextPlayer: function() {
-      currentPlayer += 1;
-      if (currentPlayer === players.length) {
-        currentPlayer = 0;
+      currentPlayerIndex += 1;
+      if (currentPlayerIndex === players.length) {
+        currentPlayerIndex = 0;
       }
     }
   }

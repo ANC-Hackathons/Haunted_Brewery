@@ -18,7 +18,6 @@ angular.module('myApp.addPlayer', ['ngRoute'])
   });
   $scope.selectedRoles = playersService.getSelectedRoles();
 
-
   $scope.isAlreadySelected = function(value) {
     if ($scope.selectedRoles.indexOf(value) != -1) {
       return true;
