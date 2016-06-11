@@ -54,7 +54,7 @@ app.get('/rooms', function(request, response)
       {
         attributes : [
             'id'
-          , 'room_name'
+          , 'name'
 
         ]
       }).then(

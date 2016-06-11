@@ -23,7 +23,7 @@ angular.module('myApp.setupParty', ['ngRoute'])
     return $scope.players.length >= 6;
   }
 
-  $scope.submit = function () {
-    $location.path('/startTurn');
+  $scope.begin = function () {
+    $location.path('/selectDifficulty');
   }
 }]);

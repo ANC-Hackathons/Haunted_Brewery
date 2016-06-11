@@ -41,7 +41,7 @@ angular.module('myApp.addPlayer', ['ngRoute'])
 
     playersService.addPlayer($scope.player.name, selected);
 
-    playersService.selectCharRole($scope.player.role);
+    playersService.selectRole($scope.player.role);
 
     $location.path('/setupParty');
   }

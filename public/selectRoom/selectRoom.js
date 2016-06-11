@@ -16,7 +16,7 @@ angular.module('myApp.selectRoom', ['ngRoute'])
     url: '/rooms'
   }).then(function successCallback(response) {
     $scope.rooms = response.data;
-    if ($scope.rooms.length === 0) $scope.rooms = [{id: 1, room_name: 'TEST 1'}, {id: 2, room_name: 'TEST 2'}, {id: 3, room_name: 'TEST 3'}]
+    if ($scope.rooms.length === 0) $scope.rooms = [{id: 1, name: 'TEST 1'}, {id: 2, name: 'TEST 2'}, {id: 3, name: 'TEST 3'}]
   }, function errorCallback(response) {
     console.log("Something went wrong fetching rooms from server");
   });
