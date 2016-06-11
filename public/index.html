@@ -11,8 +11,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/foundation/css/foundation.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <style type="text/css">
+  #app {
+    width: 340px;
+    height: 568px;
+  }
+
+  .tile {
+    width: 105px !important;
+    height: 105px !important;
+    margin: 0 10px 10px 0;
+    display: block;
+    border: 1px solid gray;
+    float: left;
+  }
+
+  </style>
 </head>
 <body>
   <ul class="menu">
@@ -25,14 +44,19 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  <div class="row">
+    <div id="app" class="small-centered columns" style="border: 1px solid gray">
+      <div ng-view></div>
+    </div>
+  </div>
 
-  <div ng-view></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/foundation/js/foundation.min.js"></script>
   <script src="app.js"></script>
   <script src="setupParty/setupParty.js"></script>
   <script src="startTurn/startTurn.js"></script>

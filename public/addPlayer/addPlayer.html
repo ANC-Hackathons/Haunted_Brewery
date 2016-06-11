@@ -1,26 +1,44 @@
-<input
-    name="playerName"
-    type="text"
-    placeholder="NAME"
-    ng-model="player.name" />
+<div class="row">
+  <div class="small-10 small-centered columns" >
+    <div class="row">
+      <div class="small-12 text-center columns">
+        <input
+          name="playerName"
+          type="text"
+          placeholder="Player's Name"
+          ng-model="player.name" />
+      </div>
+    </div>
 
-<ul>
-  <li ng-repeat="charClass in charClasses">
-    <label for="class_{{charClass.id}}">
-      <input type="radio"
-             id="{{charClass.id}}"
-             value="{{charClass.id}}"
-             name="player.class"
-             title="{{charClass.name}}"
-             ng-disabled="isAlreadySelected(charClass.id)"
-             ng-model="player.charClass"
-      >
-      {{charClass.name}}
-    </label>
-  </li>
-</ul>
+    <div class="row">
+      <div class="small-12 text-center columns">
+      <ul style="display: inline; list-style-type: none; float: left;">
+        <li ng-repeat="charClass in charClasses" class="tile">
+          <label for="class_{{charClass.id}}">
+            <input type="radio"
+                   id="{{charClass.id}}"
+                   value="{{charClass.id}}"
+                   name="player.class"
+                   title="{{charClass.name}}"
+                   ng-disabled="isAlreadySelected(charClass.id)"
+                   ng-model="player.charClass"
+            >
+            {{charClass.name}}
+          </label>
+        </li>
+      </ul>
 
-<button ng-click="addPlayer()">Add</button>
+      </div>
+
+    <div class="row">
+      <div class="small-12 text-center columns">
+        <button ng-click="addPlayer()">Confirm <i class="fa fa-check-circle"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!--  <label for="playerClass">Class:</label><br>-->
 <!--  <select name="playerClass" ng-model="player.class" ng-change="valueSelected()">-->

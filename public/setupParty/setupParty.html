@@ -15,19 +15,30 @@
 
 <!--<button name="submit" ng-click="submit()">Continue</button>-->
 
-<div ng-if="players.length == 0">
-  <span>NO PLAYERS YET!</span>
-</div>
+<div class="row">
+  <div class="small-10 small-centered columns" >
+    <div class="row">
+      <div class="small-12 text-center columns">
+        <div ng-if="players.length == 0">
+          <span>Add Players to Continue</span>
+        </div>
 
-<div ng-if="players.length > 0">
-  <div ng-repeat="player in players">
-    <!--TODO: Display player icon-->
-    <span>{{player.name}}</span>
+        <div ng-if="players.length > 0">
+          <div ng-repeat="player in players">
+            <span>{{player.name}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 text-center">
+        <ul class="button-group">
+          <li><a class="button" ng-click="addPlayer()"><i class="fa fa-plus-circle"></i> Add</a></li>
+          <li><a class="button" ng-if="players.length > 0" ng-click="begin()">Begin</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
-<button ng-click="addPlayer()">Add</button>
 
-<div ng-if="players.length > 0">
-  <button ng-click="begin()">Begin</button>
-</div>
