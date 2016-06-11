@@ -81,6 +81,19 @@ app.get('/tiles', function(request, response) {
   );
 });
 
+app.get('/bosses', function(request, response) {
+  db.bosses_abilities.findAll(
+    { where: { boss: request.query.boss_id } }
+  ).then(function(boss_abilities)
+    {
+      console.log(boss_abilities);
+      response.send(
+        boss_abilities.map(function (r) { return r.get({ plain : true }) })
+      );
+    }
+  );
+});
+
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
