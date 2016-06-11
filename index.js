@@ -69,7 +69,6 @@ app.get('/rooms', function(request, response)
 );
 
 app.get('/tiles', function(request, response) {
-  console.log(request.query.room_id);
   db.tiles.findAll(
     { where: { room: request.query.room_id } }
   ).then(function(tiles)
