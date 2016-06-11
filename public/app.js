@@ -4,6 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.setupParty',
+  'myApp.startTurn',
   'myApp.addPlayer',
   'myApp.players',
   'myApp.version'

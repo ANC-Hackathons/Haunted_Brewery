@@ -6,6 +6,7 @@ angular.module('myApp.players', [])
   var players = [];
   var charClasses = [];
   var selectedCharClasses = [];
+  var currentPlayerIndex = 0;
 
   var charClassesLoadedPromise = $http({
     method: 'GET',
@@ -35,6 +36,15 @@ angular.module('myApp.players', [])
       selectedCharClasses.push[charClass];
     },
 
-    getCharClassesLoadedPromise: function() { return charClassesLoadedPromise }
+    getCharClassesLoadedPromise: function() { return charClassesLoadedPromise },
+
+    getCurrentPlayerIndex: function() { return currentPlayerIndex },
+
+    nextPlayer: function() {
+      currentPlayer += 1;
+      if (currentPlayer === players.length) {
+        currentPlayer = 0;
+      }
+    }
   }
 }]);

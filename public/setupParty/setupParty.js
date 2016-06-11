@@ -27,12 +27,6 @@ angular.module('myApp.setupParty', ['ngRoute'])
   }
 
   $scope.submit = function () {
-    // TODO - what happens when you submit?
-    console.log('SUBMIT WAS CLICKED!');
+    $location.path('/startTurn');
   }
 }]);
-
-function Player() {
-  this.class = null;
-  this.name = null;
-}
