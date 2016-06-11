@@ -15,6 +15,7 @@ BOSS HEALTH: {{currentBoss.abvRemaining}}
   <div ng-show='characterShown'>character stuff</div>
   <div ng-show='inventoryShown'>inventory stuff</div>
   <div ng-show='abilityShown'>ability stuff</div>
+  <div ng-show='damageShow'>{{currentBoss.name}} attacks with {{ability.name}}: {{ability.ability}}.</div>
   <button ng-click="closeModal()">Continue</button>
 </modal-dialog>
 

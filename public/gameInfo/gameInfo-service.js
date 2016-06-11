@@ -34,6 +34,18 @@ angular.module('myApp.gameInfo', [])
       bosses[0].abvRemaining = Math.ceil(bosses[0].abv);
       bosses[1].abvRemaining = Math.ceil(bosses[1].abv);
       bosses[2].abvRemaining = Math.ceil(bosses[2].abv);
+
+      bossess.forEach(function(boss) {
+        $http({
+          method: 'GET',
+          url: '/bosses',
+          params: {boss_id: boss.id}
+        }).then(function successCallback(response) {
+          boss.abilities = response.data;
+        }, function errorCallback(response) {
+          console.log("Something went wrong fetching tiles from server");
+        });
+      }),
     },
 
     bossDefeated: function() {

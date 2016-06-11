@@ -16,7 +16,9 @@ angular.module('myApp.bossFightBossTurn', ['ngRoute'])
   $scope.characterShown = false;
   $scope.inventoryShown = false;
   $scope.abilityShown = false;
+  $scope.damageShown = false;
   $scope.modalShown = false;
+  $scope.ability = null;
   $scope.currentBoss = gameInfoService.getCurrentBoss();
 
   $scope.characterInfo = function() {
@@ -38,6 +40,25 @@ angular.module('myApp.bossFightBossTurn', ['ngRoute'])
   }
 
   $scope.braceYourself = function() {
+    $scope.ability = Math.floor(Math.random() * $scope.currentBoss.abilities.length);
+    // TODO - call associated ability here
+    switch ($scope.ability.id) {
+      case 43:
+        playersService.pigsMightFly;
+        break;
+      case 44:
+        playersService.swineFlew()
+        break;
+      case 45:
+        playersService.holyRoller()
+        break;
+      case 46:
+        playersService.penitence()
+        break;
+      case 47:
+        playersService.ascension()
+        break;
+    }
     playersService.nextPlayer();
     $location.path('/startTurn');
   }

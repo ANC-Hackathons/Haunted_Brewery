@@ -2,7 +2,7 @@
 
 angular.module('myApp.players', [])
 
-.service('playersService', [ '$http', function($http) {
+.service('playersService', [ '$http', 'gameInfoService', function($http, gameInfoService) {
   var players = [];
   var roles = [];
   var selectedRoles = [];
@@ -73,6 +73,70 @@ angular.module('myApp.players', [])
       if (currentPlayerIndex === players.length) {
         currentPlayerIndex = 0;
       }
+    },
+
+    greed: function() {
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].health -= 2;
+      gameInfoService.getCurrentBoss().abvRemaining += 2;
+    },
+
+    wrath: function() {
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].health -= 3;
+    },
+
+    gluttony: function() {
+      players.forEach(function(player) {
+        if (player.bac > 5) player.health -= 3;
+      });
+    },
+
+    theNumber: function() {
+      players.forEach(function(player) {
+        player.health -= 6;
+      });
+    },
+
+    mortality: function() {
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].health -= 2;
+      players[victimIndex].bac += 2;
+    },
+
+    reignOfFire: function() {
+      players.forEach(function(player) {
+        if (player.bac < 5) player.health -= 4;
+      });
+    },
+
+    thePriceIsRight: function() {
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].bac -= 1;
+      players[victimIndex].health -= 3;
+    },
+
+    darkBargain: function() {
+      gameInfoService.getCurrentBoss().abvRemaining -= 1;
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].bac += 3;
+    },
+
+    bloodySunday: function() {
+      players.forEach(function(player) {
+        player.health -= 3;
+      });
+    },
+
+    filicide: function() {
+      gameInfoService.getCurrentBoss().abvRemaining -= 2;
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].health -= 7;
+    },
+
+    blitz: function() {
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].bac += 2;
     }
   }
 }]);
