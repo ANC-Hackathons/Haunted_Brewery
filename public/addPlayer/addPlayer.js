@@ -11,16 +11,16 @@ angular.module('myApp.addPlayer', ['ngRoute'])
 
 .controller('addPlayerCtrl', ['$scope', '$location', '$document', 'playersService', function($scope, $location, $document, playersService) {
 
-  $scope.player = { name: '', charClass: '' };
+  $scope.player = { name: '', role: '' };
 
-  playersService.getCharClassesLoadedPromise().then(function() {
-    $scope.charClasses = playersService.getCharClasses();
+  playersService.getRolesLoadedPromise().then(function() {
+    $scope.roles = playersService.getRoles();
   });
-  $scope.selectedCharClasses = playersService.getSelectedCharClasses();
+  $scope.selectedRoles = playersService.getSelectedRoles();
 
 
   $scope.isAlreadySelected = function(value) {
-    if ($scope.selectedCharClasses.indexOf(value) != -1) {
+    if ($scope.selectedRoles.indexOf(value) != -1) {
       return true;
     } else {
       return false;
@@ -31,9 +31,9 @@ angular.module('myApp.addPlayer', ['ngRoute'])
 
     var selected;
 
-    $scope.charClasses.forEach(function(i)
+    $scope.roles.forEach(function(i)
     {
-      if ( i.id == $scope.player.charClass )
+      if ( i.id == $scope.player.role )
       {
         selected = i;
       }
@@ -41,7 +41,7 @@ angular.module('myApp.addPlayer', ['ngRoute'])
 
     playersService.addPlayer($scope.player.name, selected);
 
-    playersService.selectCharClass($scope.player.charClass);
+    playersService.selectCharRole($scope.player.role);
 
     $location.path('/setupParty');
   }

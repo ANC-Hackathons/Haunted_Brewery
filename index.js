@@ -24,21 +24,22 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-app.get('/classes', function(request, response)
+app.get('/roles', function(request, response)
 {
     db.roles.findAll(
       {
-        attributes : [
+        attributes :
+        [
             'id'
           , 'name'
           , 'flavor'
           , 'ability'
 
         ]
-      }).then(
+      }
+    ).then(
       function (roles)
       {
-        console.log(roles.map(function (r) { return r.get({ plain : true }) }));
         response.send(
           roles.map(function (r) { return r.get({ plain : true }) })
         );
