@@ -1,0 +1,17 @@
+<div ng-repeat="player in players">
+  <label for="playerName">Name:</label><br>
+  <input name="playerName" type="text" ng-model="player.name" />
+
+  <label for="playerClass">Class:</label><br>
+  <select name="playerClass" ng-model="player.class" ng-change="valueSelected()">
+    <option value="">---Please select---</option> <!-- not selected / blank option -->
+    <option value="option-1" ng-disabled="isAlreadySelected('option-1')">Option 1</option>
+    <option value="option-2" ng-disabled="isAlreadySelected('option-2')">Option 2</option>
+  </select><br>
+
+  <button name="removePlayer" ng-click="removePlayer($index)">Remove</button>
+</div>
+
+<button name="addPlayer" ng-click="addPlayer()" ng-disabled="isPartyFull()">Add Player</button>
+
+<button name="submit" ng-click="submit()">Continue</button>
