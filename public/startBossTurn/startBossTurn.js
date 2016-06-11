@@ -11,18 +11,13 @@ angular.module('myApp.startBossTurn', ['ngRoute'])
 
 .controller('startBossTurnCtrl', ['$scope', '$location', 'playersService', 'gameInfoService', function($scope, $location, playersService, gameInfoService) {
 
-  var isBossFight = false;
-
   $scope.currentBoss = gameInfoService.getCurrentBoss();
 
   $scope.currentPlayer = playersService.getCurrentPlayer();
 
   $scope.startBossTurn = function() {
-    if (isBossFight) {
       $location.path('/bossFightPlayerBossTurn');
-    } else {
-      $location.path('/selectRoom');
     };
   }
 
-}]);
+]);
