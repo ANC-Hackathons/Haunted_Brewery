@@ -4,7 +4,8 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.setupParty',
-  'myApp.view2',
+  'myApp.addPlayer',
+  'myApp.players',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

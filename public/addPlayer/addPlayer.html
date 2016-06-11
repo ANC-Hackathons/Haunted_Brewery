@@ -1,6 +1,19 @@
-<!--<div ng-repeat="player in players">-->
-<!--  <label for="playerName">Name:</label><br>-->
-<!--  <input name="playerName" type="text" ng-model="player.name" />-->
+<input
+    name="playerName"
+    type="text"
+    placeholder="NAME"
+    ng-model="player.name" />
+
+<input
+  id="{{charClass}}"
+  type="radio"
+  label="{{charClass}}"
+  value="{{charClass}}"
+  name="charClasses"
+  ng-repeat="charClass in charClasses"
+  ng-disabled="isAlreadySelected(charClass)" />
+
+<button ng-click="addPlayer()">Add</button>
 
 <!--  <label for="playerClass">Class:</label><br>-->
 <!--  <select name="playerClass" ng-model="player.class" ng-change="valueSelected()">-->
@@ -14,20 +27,3 @@
 <!--<button name="addPlayer" ng-click="addPlayer()" ng-disabled="isPartyFull()">Add Player</button>-->
 
 <!--<button name="submit" ng-click="submit()">Continue</button>-->
-
-<div ng-if="players.length == 0">
-  <span>NO PLAYERS YET!</span>
-</div>
-
-<div ng-if="players.length > 0">
-  <div ng-repeat="player in players">
-    <!--TODO: Display player icon-->
-    <span>{{player.name}}</span>
-  </div>
-</div>
-
-<button ng-click="addPlayer()">Add</button>
-
-<div ng-if="players.length > 0">
-  <button ng-click="begin()">Begin</button>
-</div>

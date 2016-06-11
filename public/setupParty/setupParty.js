@@ -9,48 +9,17 @@ angular.module('myApp.setupParty', ['ngRoute'])
   });
 }])
 
-.controller('SetupPartyCtrl', ['$scope', '$http', function($scope, $http) {
-  $scope.players = [
-    new Player()
-  ];
+.controller('SetupPartyCtrl', ['$scope', '$location', 'playersService', function($scope, $location, playersService) {
 
-  $scope.classes = [];
+  console.log(playersService.getPlayers().length);
+  //console.log(playersService.getPlayers());
+
+  $scope.players = playersService.getPlayers();
+
   $scope.selectedClasses = [];
 
-  $http({
-    method: 'GET',
-    url: '/classes'
-  }).then(function successCallback(response) {
-    console.log(response.data.classes);
-    $scope.classes = response.data.classes;
-  }, function errorCallback(response) {
-    console.log("Something went wrong fetching classes from server");
-  });
-
-  $scope.valueSelected = function() {
-    $scope.selectedClasses = [];
-    $scope.players.forEach(function(player) {
-      $scope.selectedClasses.push(player.class);
-    })
-  }
-
-  $scope.isAlreadySelected = function(value) {
-    if ($scope.selectedClasses.indexOf(value) != -1) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  $scope.removePlayer = function(index) {
-    $scope.players.splice(index, 1);
-    $scope.valueSelected();
-  }
-
   $scope.addPlayer = function() {
-    if (!$scope.isPartyFull()) {
-      $scope.players.push(new Player());
-    }
+    $location.path('/addPlayer');
   }
 
   $scope.isPartyFull = function() {
