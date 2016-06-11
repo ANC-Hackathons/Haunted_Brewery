@@ -33,6 +33,8 @@ angular.module('myApp.selectTile', ['ngRoute'])
 
   $scope.closeModal = function() {
     $scope.modalShown = false;
+    playersService.nextPlayer();
+    $location.path('/startTurn');
   }
 
 }]);
