@@ -5,7 +5,7 @@ angular.module('myApp.gameInfo', [])
 .service('gameInfoService', [ '$http', function($http) {
 
   var difficulty = null;
-  var currentBoss = 0;
+  var currentBossIndex = 0;
   var fightingBoss = false;
   var bosses = [];
   var gameWon = false;
@@ -17,7 +17,7 @@ angular.module('myApp.gameInfo', [])
 
     getCurrentBoss: function() {
       if (bosses.length > 0) {
-        return bosses[currentBoss];
+        return bosses[currentBossIndex];
       } else {
         return null;
       }
@@ -30,16 +30,29 @@ angular.module('myApp.gameInfo', [])
     endBossFight: function() {fightingBoss = false},
 
     setBosses: function(b) {
-      console.log('called setBosses')
       bosses = b;
-      console.log(bosses);
+      bosses[0].abvRemaining = bosses[0].abv;
+      bosses[1].abvRemaining = bosses[1].abv;
+      bosses[2].abvRemaining = bosses[2].abv;
     },
 
     bossDefeated: function() {
-      currentBoss++;
-      if (currentBoss === bosses.length) {
+      currentBossIndex++;
+      if (currentBossIndex === bosses.length) {
         gameWon = true;
       }
+    },
+
+    getCurrentBossABVRemaining: function() {
+      return this.getCurrentBoss().abvRemaining;
+    },
+
+    currentBossTakeDamage: function(damage) {
+      this.getCurrentBoss().abvRemaining -= damage;
+    },
+
+    currentBossDealDamage: function() {
+      return 1;
     },
 
     isGameWon: function() {

@@ -17,6 +17,8 @@ angular.module('myApp', [
   'myApp.players',
   'myApp.playerInfo',
   'myApp.modal',
+  'myApp.gameWon',
+  'myApp.gameLost',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

@@ -2,24 +2,18 @@
 
 BOSS HEALTH: {{currentBoss.abvRemaining}}
 
-<button np-click="characterInfo()">Character</button>
+<button ng-click="characterInfo()">Character</button>
 
-<button np-click="inventory()">Inventory</button>
+<button ng-click="inventory()">Inventory</button>
 
-<button np-click="ability()">Ability</button>
+<button ng-click="ability()">Ability</button>
 
-<modal-dialog show='characterShown' width='340px' height='340px'>
-  <p>Modal Content Goes here<p>
+<button ng-click="attack()">Attack</button>
+
+<modal-dialog show='modalShown' width='340px' height='340px'>
+  <div ng-show='characterShown'>character stuff</div>
+  <div ng-show='inventoryShown'>inventory stuff</div>
+  <div ng-show='abilityShown'>ability stuff</div>
   <button ng-click="closeModal()">Continue</button>
 </modal-dialog>
 
-
-<modal-dialog show='inventoryShown' width='340px' height='340px'>
-  <p>Modal Content Goes here<p>
-  <button ng-click="closeModal()">Continue</button>
-</modal-dialog>
-
-<modal-dialog show='abilityShown' width='340px' height='340px'>
-  <p>Modal Content Goes here<p>
-  <button ng-click="closeModal()">Continue</button>
-</modal-dialog>
