@@ -20,16 +20,41 @@ angular.module('myApp.players', [])
   return {
     getPlayers: function() { return players },
 
-    addPlayer: function(name, role, health, bac) {
+    addPlayer: function(name, role) {
       players.push({
         name: name,
         role: role,
-        health: health || 3,
-        bac: bac || 0.05
+        health: this.getRoleHealth(role),
+        bac: 0
       });
     },
 
     getRoles: function() { return roles },
+
+    getRoleHealth: function(role) {
+      var roleHealth = 0;
+      switch(role.id) {
+        case 7:
+          roleHealth = 12
+          break;
+        case 8:
+          roleHealth = 14
+          break;
+        case 9:
+          roleHealth = 20
+          break;
+        case 10:
+          roleHealth = 13
+          break;
+        case 11:
+          roleHealth = 15
+          break;
+        case 12:
+          roleHealth = 16
+          break;
+      }
+      return roleHealth
+    },
 
     getSelectedRoles: function() { return selectedRoles },
 

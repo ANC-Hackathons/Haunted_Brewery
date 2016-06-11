@@ -31,9 +31,9 @@ angular.module('myApp.gameInfo', [])
 
     setBosses: function(b) {
       bosses = b;
-      bosses[0].abvRemaining = bosses[0].abv;
-      bosses[1].abvRemaining = bosses[1].abv;
-      bosses[2].abvRemaining = bosses[2].abv;
+      bosses[0].abvRemaining = Math.ceil(bosses[0].abv);
+      bosses[1].abvRemaining = Math.ceil(bosses[1].abv);
+      bosses[2].abvRemaining = Math.ceil(bosses[2].abv);
     },
 
     bossDefeated: function() {
