@@ -15,7 +15,7 @@ angular.module('myApp.bossFightPlayerTurn', ['ngRoute'])
   $scope.inventoryShown = false;
   $scope.abilityShown = false;
   $scope.modalShown = false;
-  //$scope.currentBoss.abvRemaining = gameInfoService.getCurrentBossABVRemaining();
+  $scope.currentBoss = gameInfoService.getCurrentBoss();
 
   $scope.characterInfo = function() {
     console.log('clicked character info');
@@ -37,7 +37,11 @@ angular.module('myApp.bossFightPlayerTurn', ['ngRoute'])
 
   $scope.attack = function() {
     playersService.nextPlayer();
-    if (playersService.getCurrentPlayerIndex() === 0) {
+    gameInfoService.currentBossTakeDamage(1);
+    if (gameInfoService.isBossDefeated()) {
+      gameInfoService.bossDefeated();
+      $location.path('/roundStart');
+    } else if (playersService.getCurrentPlayerIndex() === 0) {
       $location.path('/startBossTurn');
     } else {
       $location.path('/startTurn');

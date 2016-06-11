@@ -37,14 +37,15 @@ angular.module('myApp.gameInfo', [])
     },
 
     bossDefeated: function() {
+      this.endBossFight();
       currentBossIndex++;
       if (currentBossIndex === bosses.length) {
         gameWon = true;
       }
     },
 
-    getCurrentBossABVRemaining: function() {
-      return this.getCurrentBoss().abvRemaining;
+    isBossDefeated: function() {
+      return this.getCurrentBoss().abvRemaining <= 0;
     },
 
     currentBossTakeDamage: function(damage) {
