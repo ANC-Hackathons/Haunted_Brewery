@@ -4,12 +4,23 @@ var prefix = require('superagent-prefix')('http://apis.mondorobot.com');
 var express = require('express');
 var app = express();
 
-request
-  .get('/beers/ellie-s-brown-ale')
-  .use(prefix)
-  .end(function(err, res) {
-    console.log(res.body);
-  });
+var Sequelize = require("sequelize");
+
+var sequelize = new Sequelize(
+  'd763clvb09amt6',
+  'wskzmzdcayybbm',
+  'p2I7frk9uxPURqiVFNlU0dT5zu',
+  {
+    host:  'ec2-107-22-235-119.compute-1.amazonaws.com:5432',
+    dialect: 'postgres',
+
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    },
+  }
+);
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
