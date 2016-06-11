@@ -16,10 +16,6 @@ var sequelize = new Sequelize(
 
 var db = require('./models');
 
-db.classes.findAll().then(function(classes) {
-  console.log(classes);
-});
-
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
@@ -28,8 +24,15 @@ app.get('/', function(request, response) {
 })
 
 app.get('/classes', function(request, response) {
-  response.send({
-    classes: ['Brewmaster', 'Cellarmaster', 'Bartender', 'Chemist', 'Keg Whisperer', 'Forklift Pilot']
+  db.classes.findAll({attributes: ['name']}).then(function (classes) {
+    classNames = [];
+    classes.forEach(function(i){
+      classNames.push(i.name);
+    });
+
+    response.send({
+      classes: classNames
+    });
   })
 })
 
