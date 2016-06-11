@@ -12,8 +12,7 @@ angular.module('myApp.players', [])
     method: 'GET',
     url: '/classes'
   }).then(function successCallback(response) {
-    console.log(response.data.classes);
-    charClasses = response.data.classes;
+    charClasses = response.data;
   }, function errorCallback(response) {
     console.log("Something went wrong fetching classes from server");
   });
@@ -25,15 +24,15 @@ angular.module('myApp.players', [])
       players.push({
         name: name,
         charClass: charClass
-      })
+      });
     },
 
     getCharClasses: function() { return charClasses },
 
     getSelectedCharClasses: function() { return selectedCharClasses },
 
-    selectCharClasses: function(charClass) {
-      selectedCharClasses.push[charClass];
+    selectCharClass: function(charClass) {
+      selectedCharClasses.push(parseInt(charClass));
     },
 
     getCharClassesLoadedPromise: function() { return charClassesLoadedPromise },

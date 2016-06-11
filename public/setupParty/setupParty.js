@@ -11,9 +11,6 @@ angular.module('myApp.setupParty', ['ngRoute'])
 
 .controller('SetupPartyCtrl', ['$scope', '$location', 'playersService', function($scope, $location, playersService) {
 
-  console.log(playersService.getPlayers().length);
-  //console.log(playersService.getPlayers());
-
   $scope.players = playersService.getPlayers();
 
   $scope.selectedClasses = [];
