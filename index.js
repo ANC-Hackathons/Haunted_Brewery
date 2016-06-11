@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 app.get('/classes', function(request, response)
 {
-    db.classes.findAll(
+    db.roles.findAll(
       {
         attributes : [
             'id'
@@ -36,10 +36,11 @@ app.get('/classes', function(request, response)
 
         ]
       }).then(
-      function (classes)
+      function (roles)
       {
+        console.log(roles.map(function (r) { return r.get({ plain : true }) }));
         response.send(
-          classes.map(function (r) { return r.get({ plain : true }) })
+          roles.map(function (r) { return r.get({ plain : true }) })
         );
       }
     );

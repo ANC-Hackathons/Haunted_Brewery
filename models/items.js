@@ -30,6 +30,10 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.TEXT,
 			allowNull: true
 		},
+		function: {
+			type: DataTypes.TEXT,
+			allowNull: true
+		},
 		api_id: {
 			type: DataTypes.STRING,
 			allowNull: true

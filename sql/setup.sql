@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS
     difficulties
-  , classes
-  , classes_difficulties
+  , roles
+  , roles_difficulties
   , games
   , games_players
   , items
@@ -28,7 +28,7 @@ CREATE TABLE difficulties
 );
 
 
-CREATE TABLE classes
+CREATE TABLE roles
 (
     id serial
   , name varchar NOT NULL
@@ -38,13 +38,13 @@ CREATE TABLE classes
 );
 
 
-CREATE TABLE classes_difficulties
+CREATE TABLE roles_difficulties
 (
-    class integer REFERENCES classes
+    role integer REFERENCES roles
   , difficulty integer REFERENCES difficulties
   , base_hp integer NOT NULL
   , base_bac integer NOT NULL
-  , PRIMARY KEY ( class, difficulty )
+  , PRIMARY KEY ( role, difficulty )
 );
 
 
@@ -64,7 +64,7 @@ CREATE TABLE games_players
     id serial
   , name varchar NOT NULL
   , turn integer NOT NULL
-  , class integer REFERENCES classes
+  , role integer REFERENCES roles
   , game integer REFERENCES games
   , active boolean NOT NULL DEFAULT 'f'
   , cur_hp integer NOT NULL
