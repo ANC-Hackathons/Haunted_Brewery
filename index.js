@@ -60,8 +60,6 @@ app.get('/rooms', function(request, response)
       }).then(
       function (rooms)
       {
-        console.log('rooms are:');
-        console.log(rooms);
         response.send(
           rooms.map(function (r) { return r.get({ plain : true }) })
         );

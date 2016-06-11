@@ -19,15 +19,10 @@ angular.module('myApp.selectTile', ['ngRoute'])
     params: {room_id: roomId}
   }).then(function successCallback(response) {
     $scope.tiles = response.data;
-    console.log("$scope.tiles in then:");
-    console.log($scope.tiles);
     if ($scope.tiles.length === 0) $scope.tiles = [{id: 1, name: 'TEST 1'}, {id: 2, name: 'TEST 2'}, {id: 3, name: 'TEST 3'}]
   }, function errorCallback(response) {
     console.log("Something went wrong fetching tiles from server");
   });
-
-  console.log("$scope.tiles:");
-  console.log($scope.tiles);
 
   $scope.selectTile = function(roomId) {
     console.log(roomId);
