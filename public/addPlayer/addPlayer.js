@@ -15,10 +15,6 @@ angular.module('myApp.addPlayer', ['ngRoute'])
 
   playersService.getCharClassesLoadedPromise().then(function() {
     $scope.charClasses = playersService.getCharClasses();
-    console.log('charClasses');
-    console.log($scope.charClasses);
-    console.log('selectedCharClasses');
-    console.log($scope.selectedCharClasses);
   });
   $scope.selectedCharClasses = playersService.getSelectedCharClasses();
 
@@ -32,12 +28,7 @@ angular.module('myApp.addPlayer', ['ngRoute'])
   }
 
   $scope.addPlayer = function() {
-    console.log("name");
-    console.log($scope.player.name);
-    console.log("1");
-    console.log($document.find('input[name=charClasses]'));
-    console.log("2");
-    console.log($document.find('input[name=charClasses]:checked').val());
+    playersService.addPlayer($scope.player.name, $scope.player.charClass);
     $location.path('/setupParty');
   }
 

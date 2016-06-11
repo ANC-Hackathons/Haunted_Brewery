@@ -11,7 +11,8 @@
   value="{{charClass}}"
   name="charClasses"
   ng-repeat="charClass in charClasses"
-  ng-disabled="isAlreadySelected(charClass)" />
+  ng-disabled="isAlreadySelected(charClass)"
+  ng-model="player.charClass" />
 
 <button ng-click="addPlayer()">Add</button>
 
