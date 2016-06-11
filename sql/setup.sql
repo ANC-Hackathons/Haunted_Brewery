@@ -226,6 +226,6 @@ CREATE TABLE games_tiles_reagents
   , found boolean NOT NULL DEFAULT 'f'
 );
 
-COMMENT ON TABLE reagents IS '3 reagents need to be collected to summon the boss';
+COMMENT ON TABLE reagents IS 'Which tile are the reagents located on in the game?';
 
 
