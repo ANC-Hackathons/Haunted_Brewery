@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/thompsnm/Haunted_Brewery/issues"
   },
-  "homepage": "https://github.com/thompsnm/Haunted_Brewery#readme"
+  "homepage": "https://github.com/thompsnm/Haunted_Brewery#readme",
+  "dependencies": {
+    "pg": "^5.1.0"
+  }
 }
