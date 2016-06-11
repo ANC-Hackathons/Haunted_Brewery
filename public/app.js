@@ -6,6 +6,7 @@ angular.module('myApp', [
   'myApp.setupParty',
   'myApp.startTurn',
   'myApp.selectRoom',
+  'myApp.selectTile',
   'myApp.addPlayer',
   'myApp.players',
   'myApp.playerInfo',

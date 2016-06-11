@@ -47,3 +47,5 @@ angular.module('myApp.addPlayer', ['ngRoute'])
   }
 
 }]);
+
+

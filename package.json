@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/thompsnm/Haunted_Brewery#readme",
   "dependencies": {
+    "body-parser": "^1.15.1",
     "bower": "^1.7.7",
     "express": "^4.13.4",
     "pg": "^5.1.0",

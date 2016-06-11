@@ -3,6 +3,7 @@ var prefix = require('superagent-prefix')('http://apis.mondorobot.com');
 
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser')
 
 var Sequelize = require("sequelize");
 
@@ -18,10 +19,10 @@ var db = require('./models');
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
-
-app.get('/', function(request, response) {
-  response.send('Hello World!')
-})
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 
 app.get('/classes', function(request, response)
 {
@@ -45,6 +46,40 @@ app.get('/classes', function(request, response)
   }
 );
 
+app.get('/rooms', function(request, response)
+{
+    db.rooms.findAll(
+      {
+        attributes : [
+            'id'
+          , 'room_name'
+
+        ]
+      }).then(
+      function (rooms)
+      {
+        console.log(rooms);
+        response.send(
+          rooms.map(function (r) { return r.get({ plain : true }) })
+        );
+      }
+    );
+  }
+);
+
+app.get('/tiles', function(request, response) {
+  console.log(request.query.room_id);
+  db.tiles.findAll(
+    { where: { room: request.query.room_id } }
+  ).then(function(tiles)
+    {
+      console.log(tiles);
+      response.send(
+        tiles.map(function (r) { return r.get({ plain : true }) })
+      );
+    }
+  );
+});
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
