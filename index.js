@@ -1,14 +1,9 @@
-// DB initial code source: https://devcenter.heroku.com/articles/getting-started-with-nodejs#provision-a-database
-var pg = require('pg');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('http://apis.mondorobot.com');
 
-app.get('/db', function (request, response) {
-  pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-    client.query('SELECT * FROM test_table', function(err, result) {
-      done();
-      if (err)
-       { console.error(err); response.send("Error " + err); }
-      else
-       { response.render('pages/db', {results: result.rows} ); }
-    });
+request
+  .get('/beers')
+  .use(prefix)
+  .end(funciton(err, res) {
+    console.log(res);
   });
-})
