@@ -15,4 +15,9 @@ VALUES
     'Bartender'
   , 'She always dreamed of...'
   , 'Pours beer'
+),
+(
+	 'Brewmaster'
+  ,'thing'
+  ,'thing'
 );
