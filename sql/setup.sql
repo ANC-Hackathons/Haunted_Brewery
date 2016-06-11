@@ -81,6 +81,7 @@ CREATE TABLE items
   , optional bool NOT NULL default 't'
   , alignment integer NOT NULL
   , flavor text
+  , function text
   , api_id varchar
   , api_name varchar
   , api_active bool NOT NULL DEFAULT 't'
