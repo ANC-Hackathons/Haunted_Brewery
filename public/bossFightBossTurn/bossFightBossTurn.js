@@ -44,7 +44,7 @@ angular.module('myApp.bossFightBossTurn', ['ngRoute'])
     // TODO - call associated ability here
     switch ($scope.ability.id) {
       case 43:
-        playersService.pigsMightFly;
+        playersService.pigsMightFly()
         break;
       case 44:
         playersService.swineFlew()
@@ -58,8 +58,59 @@ angular.module('myApp.bossFightBossTurn', ['ngRoute'])
       case 47:
         playersService.ascension()
         break;
+      case 48:
+        playersService.righteousFury()
+        break;
+      case 49:
+        playersService.waterToWine()
+        break;
+      case 50:
+        playersService.ayurveda()
+        break;
+      case 51:
+        playersService.karma()
+        break;
+      case 52:
+        playersService.reichAndRoll()
+        break;
+      case 53:
+        playersService.blitz()
+        break;
+      case 54:
+        playersService.filicide()
+        break;
+      case 55:
+        playersService.bloodySunday()
+        break;
+      case 56:
+        playersService.darkBargain()
+        break;
+      case 57:
+        playersService.thePriceIsRight()
+        break;
+      case 58:
+        playersService.reignOfFire()
+        break;
+      case 59:
+        playersService.mortality()
+        break;
+      case 60:
+        playersService.theNumber()
+        break;
+      case 61:
+        playersService.gluttony()
+        break;
+      case 62:
+        playersService.wrath()
+        break;
+      case 63:
+        playersService.greed()
+        break;
     }
-    playersService.nextPlayer();
+  }
+
+  $scope.nextPlayer = function() {
+    $scope.closeModal();
     $location.path('/startTurn');
   }
 

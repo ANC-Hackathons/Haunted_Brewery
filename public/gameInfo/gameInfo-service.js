@@ -45,7 +45,7 @@ angular.module('myApp.gameInfo', [])
         }, function errorCallback(response) {
           console.log("Something went wrong fetching tiles from server");
         });
-      }),
+      })
     },
 
     bossDefeated: function() {

@@ -141,7 +141,7 @@ angular.module('myApp.players', [])
 
     pigsMightFly: function() {
       var abilitySuccess = Math.random() * 100;
-      if abilitySuccess < 20 {
+      if (abilitySuccess < 20) {
         var victimIndex = Math.floor(Math.random() * players.length);
         players[victimIndex].health -= 6;
       }
