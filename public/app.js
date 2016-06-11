@@ -7,6 +7,7 @@ angular.module('myApp', [
   'myApp.startTurn',
   'myApp.addPlayer',
   'myApp.players',
+  'myApp.playerInfo',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
