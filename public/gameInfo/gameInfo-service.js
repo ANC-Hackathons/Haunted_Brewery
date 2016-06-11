@@ -35,7 +35,7 @@ angular.module('myApp.gameInfo', [])
       bosses[1].abvRemaining = Math.ceil(bosses[1].abv);
       bosses[2].abvRemaining = Math.ceil(bosses[2].abv);
 
-      bossess.forEach(function(boss) {
+      bosses.forEach(function(boss) {
         $http({
           method: 'GET',
           url: '/bosses',
