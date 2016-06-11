@@ -11,7 +11,7 @@ angular.module('myApp.startBossFight', ['ngRoute'])
 
 .controller('startBossFightCtrl', ['$scope', '$location', '$http', 'gameInfoService', function($scope, $location, $http, gameInfoService) {
 
-  $scope.currentBoss = gameInfoService.getCurrentBoss() || {name: "The Beast", hops: "Some hops", grain: "Some grain", yeast: "Some yeast", abv: "15"};
+  $scope.currentBoss = gameInfoService.getCurrentBoss();
 
   $scope.fight = function() {
     gameInfoService.startBossFight();
