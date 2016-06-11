@@ -1,9 +1,9 @@
 <player-info></player-info>
 
-<span>SELECT THE ROOM:</span>
+<span>SELECT THE TILE:</span>
 
-<div ng-repeat="room in rooms">
-  <button ng-click="selectTile(room.id)">
-    {{room.room_name}}
+<div ng-repeat="tile in tiles">
+  <button ng-click="selectTile(tile.id)">
+    {{tile.name}}
   </button>
 </div>

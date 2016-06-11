@@ -28,17 +28,7 @@ angular.module('myApp.selectRoom', ['ngRoute'])
 
   $scope.selectRoom = function(roomId) {
     console.log(roomId);
-
-    $http({
-      method: 'GET',
-      url: '/tiles',
-      params: {room_id: roomId}
-    }).then(function successCallback(response) {
-      //TODO:  add proper route
-      //$location.path('/selectTile');
-    }, function errorCallback(response) {
-      console.log("Something went wrong posting room to server");
-    });
+    $location.path('/selectTile/' + roomId);
   }
 
 }]);
