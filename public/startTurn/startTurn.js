@@ -11,11 +11,7 @@ angular.module('myApp.startTurn', ['ngRoute'])
 
 .controller('startTurnCtrl', ['$scope', '$location', 'playersService', function($scope, $location, playersService) {
 
-  $scope.players = playersService.getPlayers();
-  $scope.currentPlayer = $scope.players[playersService.getCurrentPlayerIndex()];
-
-  console.log($scope.players);
-  console.log($scope.currentPlayer);
+  $scope.currentPlayer = playersService.getCurrentPlayer();
 
   $scope.startTurn = function() {
     //TODO:  add proper route

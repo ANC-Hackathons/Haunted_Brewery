@@ -20,10 +20,12 @@ angular.module('myApp.players', [])
   return {
     getPlayers: function() { return players },
 
-    addPlayer: function(name, charClass) {
+    addPlayer: function(name, charClass, health, bac) {
       players.push({
         name: name,
-        charClass: charClass
+        charClass: charClass,
+        health: health || 3,
+        bac: bac || 0.05
       });
     },
 
@@ -38,6 +40,8 @@ angular.module('myApp.players', [])
     getCharClassesLoadedPromise: function() { return charClassesLoadedPromise },
 
     getCurrentPlayerIndex: function() { return currentPlayerIndex },
+
+    getCurrentPlayer: function() { return players[currentPlayerIndex] },
 
     nextPlayer: function() {
       currentPlayer += 1;
