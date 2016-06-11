@@ -23,18 +23,28 @@ app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 
-app.get('/classes', function(request, response) {
-  db.classes.findAll({attributes: ['name']}).then(function (classes) {
-    classNames = [];
-    classes.forEach(function(i){
-      classNames.push(i.name);
-    });
+app.get('/classes', function(request, response)
+{
+    db.classes.findAll(
+      {
+        attributes : [
+            'id'
+          , 'name'
+          , 'flavor'
+          , 'ability'
 
-    response.send({
-      classes: classNames
-    });
-  })
-})
+        ]
+      }).then(
+      function (classes)
+      {
+        response.send(
+          classes.map(function (r) { return r.get({ plain : true }) })
+        );
+      }
+    );
+  }
+);
+
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))

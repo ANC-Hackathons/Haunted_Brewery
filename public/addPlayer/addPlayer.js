@@ -28,7 +28,21 @@ angular.module('myApp.addPlayer', ['ngRoute'])
   }
 
   $scope.addPlayer = function() {
-    playersService.addPlayer($scope.player.name, $scope.player.charClass);
+
+    var selected;
+
+    $scope.charClasses.forEach(function(i)
+    {
+      if ( i.id == $scope.player.charClass )
+      {
+        selected = i;
+      }
+    });
+
+    playersService.addPlayer($scope.player.name, selected);
+
+    playersService.selectCharClass($scope.player.charClass);
+
     $location.path('/setupParty');
   }
 

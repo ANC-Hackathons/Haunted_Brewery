@@ -4,15 +4,21 @@
     placeholder="NAME"
     ng-model="player.name" />
 
-<input
-  id="{{charClass}}"
-  type="radio"
-  label="{{charClass}}"
-  value="{{charClass}}"
-  name="charClasses"
-  ng-repeat="charClass in charClasses"
-  ng-disabled="isAlreadySelected(charClass)"
-  ng-model="player.charClass" />
+<ul>
+  <li ng-repeat="charClass in charClasses">
+    <label for="class_{{charClass.id}}">
+      <input type="radio"
+             id="{{charClass.id}}"
+             value="{{charClass.id}}"
+             name="player.class"
+             title="{{charClass.name}}"
+             ng-disabled="isAlreadySelected(charClass.id)"
+             ng-model="player.charClass"
+      >
+      {{charClass.name}}
+    </label>
+  </li>
+</ul>
 
 <button ng-click="addPlayer()">Add</button>
 
