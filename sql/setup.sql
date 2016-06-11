@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS
   , bosses_difficulties
   , games_bosses
   , reagents
+  , games_tiles_reagents
 CASCADE
 ;
 
@@ -32,6 +33,7 @@ CREATE TABLE classes
     id serial
   , name varchar NOT NULL
   , flavor text
+  , ability text
   , PRIMARY KEY (id)
 );
 
@@ -226,6 +228,6 @@ CREATE TABLE games_tiles_reagents
   , found boolean NOT NULL DEFAULT 'f'
 );
 
-COMMENT ON TABLE reagents IS 'Which tile are the reagents located on in the game?';
+COMMENT ON TABLE games_tiles_reagents IS 'Which tile are the reagents located on in the game?';
 
 
