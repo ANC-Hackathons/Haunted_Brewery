@@ -11,11 +11,9 @@ angular.module('myApp.selectDifficulty', ['ngRoute'])
 
 .controller('selectDifficultyCtrl', ['$scope', '$location', '$http', function($scope, $location, $http) {
 
-  var roomId = $routeParams.roomId
-
   $scope.selectDifficulty = function(difficultyId) {
     console.log(difficultyId);
-    $location.path('/startTurn');
+    $location.path('/roundStart');
   }
 
 }]);

@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
 			primaryKey: true,
 			autoIncrement: true
 		},
-		room_name: {
+		room: {
 			type: DataTypes.STRING,
 			allowNull: false
 		}

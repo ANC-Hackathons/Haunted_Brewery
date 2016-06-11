@@ -14,8 +14,7 @@ angular.module('myApp.startTurn', ['ngRoute'])
   $scope.currentPlayer = playersService.getCurrentPlayer();
 
   $scope.startTurn = function() {
-    //TODO:  add proper route
-    //$location.path('/addPlayer');
+    $location.path('/selectRoom');
   }
 
 }]);

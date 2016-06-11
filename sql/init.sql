@@ -103,7 +103,7 @@ VALUES
 
 INSERT INTO rooms
 (
-    room_name
+    name
 )
 
 VALUES

@@ -121,7 +121,7 @@ COMMENT ON TABLE games_players_games_items IS 'Player''s inventory';
 CREATE TABLE rooms
 (
     id serial
-  , room_name varchar NOT NULL
+  , name varchar NOT NULL
   , PRIMARY KEY( id )
 );
 
