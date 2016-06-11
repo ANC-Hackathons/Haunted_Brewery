@@ -137,6 +137,63 @@ angular.module('myApp.players', [])
     blitz: function() {
       var victimIndex = Math.floor(Math.random() * players.length);
       players[victimIndex].bac += 2;
+    },
+
+    pigsMightFly: function() {
+      var abilitySuccess = Math.random() * 100;
+      if abilitySuccess < 20 {
+        var victimIndex = Math.floor(Math.random() * players.length);
+        players[victimIndex].health -= 6;
+      }
+    },
+
+    swineFlew: function() {
+      players.forEach(function(player) {
+        player.bac += 2;
+      });
+    },
+
+    holyRoller: function() {
+      players.forEach(function(player) {
+        player.health -=2;
+      });
+    },
+
+    penitence: function() {
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].health -= Math.ceiling( 1 / 3 * players[victimIndex].bac);
+    },
+
+    ascension: function() {
+      players.forEach(function(player) {
+        player.health -= 3;
+      })
+    },
+
+    righteousFury: function() {
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].health -= 4;
+    },
+
+    waterToWine: function() {
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].health = players[victimIndex].bac;
+      players[victimIndex].bac = 0.5 * players[victimIndex].bac;
+    },
+
+    ayurveda: function() {
+      gameInfoService.getCurrentBoss().abvRemaining += 2;
+    },
+
+    karma: function() {
+      var victimIndex = Math.floor(Math.random() * players.length);
+      players[victimIndex].health -= Math.ceiling( 1 / 2 * players[victimIndex].bac);
+    },
+
+    reichAndRoll: function() {
+      players.forEach(function(player) {
+        player.health -= 2;
+      })
     }
   }
 }]);

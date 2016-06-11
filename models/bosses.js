@@ -12,14 +12,13 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		mini: {
-			type: DataTypes.BOOLEAN,
-			allowNull: false,
-			defaultValue: true
-		},
 		series: {
 			type: DataTypes.INTEGER,
-			allowNull: true
+			allowNull: true,
+			references: {
+				model: 'series',
+				key: 'id'
+			}
 		},
 		api_id: {
 			type: DataTypes.STRING,

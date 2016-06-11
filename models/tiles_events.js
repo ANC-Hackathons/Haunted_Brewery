@@ -1,21 +1,31 @@
 /* jshint indent: 1 */
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('tiles_encounters', {
+	return sequelize.define('tiles_events', {
 		tile: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			primaryKey: true
+			primaryKey: true,
+			references: {
+				model: 'tiles',
+				key: 'id'
+			}
 		},
-		encounter: {
+		event: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			primaryKey: true
+			references: {
+				model: 'events',
+				key: 'id'
+			}
 		},
 		difficulty: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			primaryKey: true
+			references: {
+				model: 'difficulties',
+				key: 'id'
+			}
 		},
 		probability: {
 			type: DataTypes.INTEGER,
@@ -23,6 +33,6 @@ module.exports = function(sequelize, DataTypes) {
 			defaultValue: '10'
 		}
 	}, {
-		tableName: 'tiles_encounters'
+		tableName: 'tiles_events'
 	});
 };

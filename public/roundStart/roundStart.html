@@ -1,6 +1,8 @@
+<img src='{{currentBoss.label_image.original}}'>
+
 {{currentBoss.name}} has escaped!<br>
 To summon and defeat him, collect:<br>
-{{currentBoss.hop_varieties[0]}}
-{{currentBoss.malt_varieties[0]}}
-{{currentBoss.yeast_varieties[0]}}
+Hops: {{currentBoss.hop_varieties[0]}} <br>
+Malt: {{currentBoss.malt_varieties[0]}} <br>
+Yeast: {{currentBoss.yeast_varieties[0]}} <br>
 <button ng-click="start()">Start</button>
