@@ -1,17 +1,15 @@
 'use strict';
 
-angular.module('myApp.bossFightBossTurn', ['ngRoute'])
+angular.module('myApp.bossFightPlayerTurn', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/bossFightBossTurn', {
-    templateUrl: 'bossFightBossTurn/bossFightBossTurn.html',
-    controller: 'bossFightBossTurnCtrl'
+  $routeProvider.when('/bossFightPlayerTurn', {
+    templateUrl: 'bossFightPlayerTurn/bossFightPlayerTurn.html',
+    controller: 'bossFightPlayerTurnCtrl'
   });
 }])
 
-.controller('bossFightBossTurnCtrl', ['$scope', '$location', '$http', 'playersService', 'gameInfoService', function($scope, $location, $http, playersService, gameInfoService) {
-
-  $scope.currentBoss = gameInfoService.getCurrentBoss();
+.controller('bossFightPlayerTurnCtrl', ['$scope', '$location', '$http', 'playersService', 'gameInfoService', function($scope, $location, $http, playersService, gameInfoService) {
 
   $scope.characterShown = false;
   $scope.inventoryShown = false;
@@ -37,9 +35,16 @@ angular.module('myApp.bossFightBossTurn', ['ngRoute'])
     $scope.abilityShown = true;
   }
 
-  $scope.braceYourself = function() {
+  $scope.attack = function() {
     playersService.nextPlayer();
-    $location.path('/startTurn');
+    gameInfoService.currentBossTakeDamage(1);
+    if (gameInfoService.isBossDefeated()) {
+      $location.path('/roundStart');
+    } else if (playersService.getCurrentPlayerIndex() === 0) {
+      $location.path('/startBossTurn');
+    } else {
+      $location.path('/startTurn');
+    }
   }
 
   $scope.closeModal = function() {

@@ -15,8 +15,8 @@ angular.module('myApp.startBossTurn', ['ngRoute'])
 
   $scope.currentPlayer = playersService.getCurrentPlayer();
 
-  $scope.startBossTurn = function() {
-      $location.path('/bossFightPlayerBossTurn');
+  $scope.startTurn = function() {
+      $location.path('/bossFightBossTurn');
     };
   }
 
