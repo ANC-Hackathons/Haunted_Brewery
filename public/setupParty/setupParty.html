@@ -1,35 +1,29 @@
-<div class="row">
-  <div class="small-10 small-centered columns" >
-    <div class="row">
-      <div class="small-12 text-center columns">
-        <div ng-if="players.length == 0">
-          <span>Add Players to Continue</span>
-        </div>
-
-        <div ng-if="players.length > 0">
-          <div ng-repeat="player in players">
-            <span>{{player.name}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 text-center">
-        <div class="button-group">
-          <a class="button" ng-click="addPlayer()">
-            Add <i class="fa fa-plus-circle"></i>
-          </a>
-          <a
-            class="button"
-            ng-if="players.length > 0"
-            ng-click="begin()"
-          >
-            Begin <i class="fa fa-beer"></i>
-          </a>
-        </ul>
-      </div>
+<div class="row top-l">
+  <div class="ten columns offset-by-one  text-center" ng-if="players.length == 0">
+    <h1>No players yet!</h1>
+    <h2>Add Players to Continue</h2>
+    <br>
+  </div>
+  <div  class="ten columns"  ng-if="players.length > 0">
+    <div ng-repeat="player in players">
+      <span>{{player.name}}</span>
     </div>
   </div>
 </div>
 
-
+<div class="row">
+  <div class="small-12 text-center">
+    <div class="button-group">
+      <a class="button" ng-click="addPlayer()">
+        Add <i class="fa fa-plus-circle"></i>
+      </a>
+      <a
+        class="button"
+        ng-if="players.length > 0"
+        ng-click="begin()"
+      >
+        Begin <i class="fa fa-beer"></i>
+      </a>
+    </ul>
+  </div>
+</div>

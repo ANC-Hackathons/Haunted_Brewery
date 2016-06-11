@@ -15,6 +15,7 @@ angular.module('myApp.addPlayer', ['ngRoute'])
 
   playersService.getRolesLoadedPromise().then(function() {
     $scope.roles = playersService.getRoles();
+    console.log($scope.roles);
   });
   $scope.selectedRoles = playersService.getSelectedRoles();
 

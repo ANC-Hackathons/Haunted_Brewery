@@ -19,8 +19,23 @@ module.exports = function(sequelize, DataTypes) {
 		ability: {
 			type: DataTypes.TEXT,
 			allowNull: true
-		}
-	}, {
+		},
+		icon: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		imgPath: {
+	    type     : DataTypes.STRING,
+	    allowNull: true,
+	    get : function() {  return '/img/roles/' + this.icon + '.png' }
+	  },
+		imgPathDis: {
+	    type     : DataTypes.STRING,
+	    allowNull: true,
+	    get : function() {  return '/img/roles/' + this.icon + '_dis.png' }
+	  }
+	},
+  {
 		tableName: 'roles'
 	});
 };
