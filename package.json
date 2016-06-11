@@ -1,0 +1,19 @@
+{
+  "name": "haunted_brewery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thompsnm/Haunted_Brewery.git"
+  },
+  "author": "Nathan Thompson <nathan.thompson@readytalk.com> (https://github.com/thompsnm)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thompsnm/Haunted_Brewery/issues"
+  },
+  "homepage": "https://github.com/thompsnm/Haunted_Brewery#readme"
+}
