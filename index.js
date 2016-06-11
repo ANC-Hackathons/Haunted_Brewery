@@ -85,3 +85,12 @@ app.get('/tiles', function(request, response) {
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
+
+var food = {};
+request
+  .get('/taproom/menu')
+  .use(prefix)
+  .end(function(err, response) {
+    console.log(response.body.menu);
+    food = response.body.menu;
+  });
