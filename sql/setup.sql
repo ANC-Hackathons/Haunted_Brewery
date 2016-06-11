@@ -38,6 +38,7 @@ CREATE TABLE roles
   , name varchar NOT NULL
   , flavor text
   , ability text
+  , icon varchar
   , PRIMARY KEY (id)
 );
 
