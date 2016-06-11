@@ -39,7 +39,6 @@ angular.module('myApp.bossFightPlayerTurn', ['ngRoute'])
     playersService.nextPlayer();
     gameInfoService.currentBossTakeDamage(1);
     if (gameInfoService.isBossDefeated()) {
-      gameInfoService.bossDefeated();
       $location.path('/roundStart');
     } else if (playersService.getCurrentPlayerIndex() === 0) {
       $location.path('/startBossTurn');
