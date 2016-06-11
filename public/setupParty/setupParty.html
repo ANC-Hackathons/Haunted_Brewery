@@ -32,9 +32,13 @@
     </div>
     <div class="row">
       <div class="small-12 text-center">
-        <ul class="button-group">
-          <li><a class="button" ng-click="addPlayer()"><i class="fa fa-plus-circle"></i> Add</a></li>
-          <li><a class="button" ng-if="players.length > 0" ng-click="begin()">Begin</a></li>
+        <div class="button-group">
+          <a class="button" ng-click="addPlayer()">
+            Add <i class="fa fa-plus-circle"></i>
+          </a>
+          <a class="button" ng-if="players.length > 0" ng-click="begin()">
+          Begin <i class="fa fa-beer"></i>
+          </a>
         </ul>
       </div>
     </div>

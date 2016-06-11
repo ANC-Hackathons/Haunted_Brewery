@@ -11,12 +11,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="bower_components/foundation/css/foundation.min.css">
+  <link rel="stylesheet" href="bower_components/foundation-sites/dist/foundation.min.css">
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 
   <style type="text/css">
+
   #app {
     width: 340px;
     height: 568px;
@@ -31,24 +32,43 @@
     float: left;
   }
 
+  a {
+    color: red !important;
+  }
+
+  a.button {
+    color: white !important;
+    background-color: red !important;
+  }
+
+
+  a.button:hover {
+    background-color: crimson !important;
+  }
+
   </style>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#!/setupParty">setupParty</a></li>
-    <li><a href="#!/addPlayer">addPlayer</a></li>
-    <li><a href="#!/startTurn">startTurn</a></li>
-    <li><a href="#!/selectRoom">selectRoom</a></li>
-  </ul>
+<div class="row">
+  <div class="small-12 text-center">
+    <div class="inline-list button-group">
+      <a class="button" href="#!/setupParty">setupParty</a>
+      <a class="button" href="#!/addPlayer">addPlayer</a>
+      <a class="button" href="#!/startTurn">startTurn</a>
+      <a class="button" href="#!/selectRoom">selectRoom</a>
+    </div>
+  </div>
+</div>
+
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <div class="row">
-    <div id="app" class="small-centered columns" style="border: 1px solid gray">
-      <div ng-view></div>
-    </div>
+<div class="row">
+  <div id="app" class="small-centered columns" style="border: 1px solid gray">
+    <div ng-view></div>
   </div>
+</div>
 
 
   <!-- In production use:
@@ -56,7 +76,7 @@
   -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/foundation/js/foundation.min.js"></script>
+  <script src="bower_components/foundation-sites/dist/foundation.min.js"></script>
   <script src="app.js"></script>
   <script src="setupParty/setupParty.js"></script>
   <script src="startTurn/startTurn.js"></script>
