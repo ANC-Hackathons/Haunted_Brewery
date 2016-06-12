@@ -1,11 +1,12 @@
-<div class="row top-s">
+<div class="row">
   <div class="ten columns offset-by-one text-center">
-     <input
-        class="wide"
-        name="playerName"
-        type="text"
-        placeholder="Player's Name"
-        ng-model="player.name" >
+    <input
+       class="wide"
+       name="playerName"
+       type="text"
+       placeholder="Player's Name"
+       ng-model="player.name"
+    >
   </div>
 </div>
 
@@ -13,30 +14,32 @@
   <div class="ten columns offset-by-one text-center">
     <ul class="tiles">
       <li ng-repeat="role in roles">
-        <label for="role_{{role.id}}">
+        <label for="role_{{role.id}}"
+               class="img_checkbox">
           <input type="radio"
-                 id="{{role.id}}"
+                 id="role_{{role.id}}"
                  value="{{role.id}}"
                  name="player.role"
                  title="{{role.name}}"
                  ng-disabled="isAlreadySelected(role.id)"
                  ng-model="player.role"
-          />
-          <img src="{{role.imgPath}}">
+          >
+          <div>
+            <img src="{{isAlreadySelected(role.id) ? role.imgPathDis : role.imgPath}}">
+            <h4>{{role.name}}</h4>
+          </div>
         </label>
       </li>
     </ul>
+  </div>
+</div>
 
-      </div>
-
-    <div class="row">
-      <div class="small-12 text-center columns">
-        <a ng-click="addPlayer()"
-           class="button" ng-click="addPlayer()">
-          Confirm <i class="fa fa-check-circle"></i>
-        </a>
-      </div>
-    </div>
+<div class="row">
+  <div class="small-12 text-center columns">
+    <a ng-click="addPlayer()"
+       class="button" ng-click="addPlayer()">
+      Confirm <i class="fa fa-check-circle"></i>
+    </a>
   </div>
 </div>
 
