@@ -43,12 +43,18 @@
 
   .tiles li {
     list-style-type: none;
-    width: 115px;
-    height: 115px;
-    margin: 10px;
+    width: 110px;
+    height: 135px;
+    margin-right: 10px;
+    background-color: #fdfdfd;
     display: block;
-    float: left;
+    float: right;
+    border-radius: 7px;
   }
+
+
+  .tiles li label > input + img { border: 2px solid transparent  }
+  .tiles li label > input:checked + img { border: 2px solid #D13239:  }
 
   .wide { width: 100%; }
 
@@ -67,6 +73,12 @@
 
   h2 {
     font-size: 18pt;
+    color: ;
+  }
+
+
+  h5 {
+    font-size: 12pt;
     color: ;
   }
 

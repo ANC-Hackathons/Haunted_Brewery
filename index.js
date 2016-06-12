@@ -32,6 +32,7 @@ app.get('/roles', function(request, response)
         [
             'id'
           , 'name'
+          , 'icon'
           , 'flavor'
           , 'ability'
 
