@@ -1,8 +1,12 @@
-# Production Instance:
+# Haunted Brewery
+
+This is the app portion for the Haunted Brewery augmented table-top game. It was implemented as a submission for the IPAs and APIs Hackathon put on by Avery Brewing and Mondo Robot.
+
+## Production Instance:
 
 https://stark-thicket-10774.herokuapp.com/
 
-# Generate Model Files
+## Generate Model Files
 
 From project root:
 
