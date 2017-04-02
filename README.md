@@ -1,6 +1,6 @@
 # Haunted Brewery
 
-This is the app portion for the Haunted Brewery augmented table-top game. It was implemented as a submission for the IPAs and APIs Hackathon put on by Avery Brewing and Mondo Robot.
+This is the app portion for the Haunted Brewery augmented table-top game. It was implemented as a submission for the [IPAs and APIs Hackathon](https://www.averybrewing.com/events/ipas-and-apis-hackathon) put on by Avery Brewing and Mondo Robot.
 
 ## Production Instance:
 
