@@ -6,6 +6,14 @@ This is the app portion for the Haunted Brewery augmented table-top game. It was
 
 https://stark-thicket-10774.herokuapp.com/
 
+## Install Dependencies
+
+Installs all npm and bower packages:
+
+```sh
+npm install
+```
+
 ## Generate Model Files
 
 From project root:
